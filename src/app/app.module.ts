@@ -3,10 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { RegisterComponent } from './componentes/register/register.component';
+import { NotfoundpageComponent } from './componentes/notfoundpage/notfoundpage.component';
+import { UsuarioComponent } from './componentes/usuario/usuario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    NavbarComponent,
+    RegisterComponent,
+    NotfoundpageComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
