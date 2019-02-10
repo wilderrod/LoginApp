@@ -15,8 +15,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { NotfoundpageComponent } from './componentes/notfoundpage/notfoundpage.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
-import { AdministradorComponent } from './componentes/administrador/administrador.component';
-import { InvitadoComponent } from './componentes/invitado/invitado.component';
+
 
 import {AuthService} from './servicios/auth.service';
 
@@ -29,8 +28,7 @@ import {AuthService} from './servicios/auth.service';
     RegisterComponent,
     NotfoundpageComponent,
     UsuarioComponent,
-    AdministradorComponent,
-    InvitadoComponent
+  
   ],
   imports: [
     BrowserModule,
