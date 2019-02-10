@@ -6,7 +6,7 @@ import {LoginComponent} from './componentes/login/login.component';
 import {RegisterComponent} from './componentes/register/register.component';
 import {UsuarioComponent} from './componentes/usuario/usuario.component';
 import {NotfoundpageComponent} from './componentes/notfoundpage/notfoundpage.component';
-import { AuthGuard } from './guards/auth.guard';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

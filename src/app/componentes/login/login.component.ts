@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 onSubmitLogin(){
   this.authService.loginEmail(this.email, this.password)
     .then((res) =>{
-      this.flashMensaje.show('Usuario logado correctamente.',
+      this.flashMensaje.show('Usuario Ingresado Correctamente.',
       {cssClass: 'alert-success', timeout: 4000});
       this.router.navigate(['/usuario']);
     }).catch((err)=>{
@@ -32,24 +32,24 @@ onSubmitLogin(){
     });
 }
 
-//onClickGoogleLogin() {
-//this.authService.loginGoogle()
-//.then((res) => {
-    //this.router.navigate(['/privado']);
-//}).catch( err => console.log(err.message));
-//}
+onClickGoogleLogin() {
+  this.authService.loginGoogle()
+   .then((res) => {
+       this.router.navigate(['/usuario']);
+   }).catch( err => console.log(err.message));
+ }
 
-//onClickFacebookLogin() {
-//this.authService.loginFacebook()
-  //.then((res) => {
-    //  this.router.navigate(['/privado']);
- // }).catch( err => console.log(err.message));
-//}
+onClickFacebookLogin() {
+this.authService.loginFacebook()
+  .then((res) => {
+    this.router.navigate(['/usuario']);
+  }).catch( err => console.log(err.message));
+}
 
-//onClickTwitterLogin() {
-//this.authService.loginTwitter()
-  //.then((res) => {
-    //this.router.navigate(['/privado']);
-  //}).catch (err => console.log(err.message));
+onClickTwitterLogin() {
+this.authService.loginTwitter()
+  .then((res) => {
+    this.router.navigate(['/usuario']);
+  }).catch (err => console.log(err.message));
 }
 }
