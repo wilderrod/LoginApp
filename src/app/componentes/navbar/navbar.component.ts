@@ -24,7 +24,7 @@ public emailUsuario: string;
     });
   }
 
-onClicklogout(){
+onClickLogout(){
   this.authService.logout();
 }
 }
