@@ -14,17 +14,17 @@ public emailUsuario: string;
     public authService: AuthService
   ngOnInit() {
     this.authService.getAuth().subscribe(auth =>{
-      if(auth){
+      if (auth) {
         this.isLogin = true;
         this.nombreUsuario = auth.displayName;
         this.emailUsuario = auth.email;
-      }else{
+      } else {
         this.isLogin = false;
       }
     });
   }
 
-onClickLogout(){
+onClickLogout() {
   this.authService.logout();
 }
 }
