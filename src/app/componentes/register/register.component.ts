@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   onSubmitAddUser(){
     this.authService.registerUser(this.email, this.password)
     .then((res) =>{
-      this.router.navigate(['/administrador']);
+      this.router.navigate(['/invitado']);
     }).catch((err)=>{
       console.log(err);
     });
