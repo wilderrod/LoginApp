@@ -13,6 +13,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'usuario', component: UsuarioComponent},
+  {path: 'administrador', component: UsuarioComponent},
+  {path: 'invitado', component: UsuarioComponent},
   {path: '**', component: NotfoundpageComponent}
 ];
 
