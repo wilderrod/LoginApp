@@ -8,9 +8,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService } from '../servicios/auth.service';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
@@ -19,15 +17,16 @@ export class AuthGuard implements CanActivate {
   ){}
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return this.authService.afAuth.authState
-    .take(1)
-    .map(authState => !! authState)
-    .do( authenticated =>{
-      if (!authenticated){
-        this.router.navigate(['/login']);
+      .take(1)
+      .map(authState => !! authState)
+      .do( authenticated => {
+         if (!authenticated) {
+           this.router.navigate(['/login']);
       }
-    });
+    })
   }
-  
+  //state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    //return this.authService.afAuth.authState
 }
