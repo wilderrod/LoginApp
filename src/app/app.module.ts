@@ -12,6 +12,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { NotfoundpageComponent } from './componentes/notfoundpage/notfoundpage.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
+import { AdministradorComponent } from './componentes/administrador/administrador.component';
+import { InvitadoComponent } from './componentes/invitado/invitado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UsuarioComponent } from './componentes/usuario/usuario.component';
     NavbarComponent,
     RegisterComponent,
     NotfoundpageComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    AdministradorComponent,
+    InvitadoComponent
   ],
   imports: [
     BrowserModule,
