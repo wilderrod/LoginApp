@@ -15,7 +15,7 @@ public emailUsuario: string;
   ngOnInit() {
     this.authService.getAuth().subscribe(auth =>{
       if(auth){
-        this.isLogin =true;
+        this.isLogin = true;
         this.nombreUsuario = auth.displayName;
         this.emailUsuario = auth.email;
       }else{

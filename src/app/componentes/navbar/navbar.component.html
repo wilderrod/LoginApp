@@ -13,14 +13,14 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#" *ng-if="!isLogin" routerLink='/login'><b>Inicio de Sesión</b><span class="sr-only"></span></a>
+                <li class="nav-item " *ngIf="!isLogin">
+                    <a class="nav-link" href="#" routerLink='/login'><b>Inicio de Sesión</b></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" *ng-if="!isLogin" routerLink='/register'><b>Registrarse</b></a>
+                <li class="nav-item" *ngIf="!isLogin">
+                    <a class="nav-link" href="#" routerLink='/register'><b>Registrarse</b></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" (click)="onClickLogout()" *ngIf="isLogin"> <b>Salir</b></a>
+                <li class="nav-item" *ngIf="isLogin">
+                    <a class="nav-link" href="#" (click)="onClickLogout()"> <b>Salir</b></a>
                 </li>
 
             </ul>
