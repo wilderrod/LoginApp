@@ -5,7 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
-
+  private currentUser: firebase.User = null;
+  
   constructor(
     public afAuth: AngularFireAuth
   ) { }
@@ -42,6 +43,7 @@ export class AuthService {
     return this.afAuth.authState.map(auth => auth);
   }
 
+  
   logout() {
     return this.afAuth.auth.signOut();
   }

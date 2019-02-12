@@ -14,7 +14,7 @@ public fotoUsuario: string;
   constructor() { }
     public authService: AuthService
   ngOnInit() {
-    this.authService.getAuth().subscribe(auth =>{
+    this.authService.getAuth().subscribe( auth => {
       if (auth) {
         this.isLogin = true;
         this.nombreUsuario = auth.displayName;
