@@ -3,7 +3,7 @@
         "rules": "database.rules.json"
     },
     "hosting": {
-        "public": "deploy",
+        "public": "dist/LoginApp",
         "ignore": [
             "firebase.json",
             "**/.*",
