@@ -51,7 +51,7 @@ import * as firebase from 'firebase/app';
   ],
   imports: [
     //HttpClient,
-    //HttpClientModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -62,9 +62,7 @@ import * as firebase from 'firebase/app';
     ToastrModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [UserService,
-    HttpClient,
-    HttpClientModule,AuthService,AuthGuard,FlashMessagesService
+  providers: [UserService,AuthService,AuthGuard,FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })

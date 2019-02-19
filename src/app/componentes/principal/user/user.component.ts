@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+//import { NgForm } from '@angular/forms';
 import { UserService } from '../../../servicios/user.service';
 //import { User} from '../../../models/user';
-import { ToastrService } from 'ngx-toastr';
-import { HttpClient } from '@angular/http';
+//import { ToastrService } from 'ngx-toastr';
+//import { HttpClient } from '@angular/http';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/http';
 export class UserComponent implements OnInit {
 
   constructor(
-    private userService: UserService, private httpClient: HttpClient
+    private userService: UserService
     //private toastr: ToastrService
     )
    { }
@@ -22,12 +22,12 @@ export class UserComponent implements OnInit {
     this.userService.getUser();
     //this.resetForm();
   }
-  onSubmit(userForm: NgForm)
-  {
-    if(userForm.value.$key == null)
-      this.userService.insertUser(userForm.value);
-    else
-    this.userService.updateUser(userForm.value);
+  //onSubmit(userForm: NgForm)
+  //{
+   // if(userForm.value.$key == null)
+   //   this.userService.insertUser(userForm.value);
+   // else
+   // this.userService.updateUser(userForm.value);
     
    // this.resetForm(userForm);
     //this.toastr.success('Sucessful Operation', 'Product Registered');
@@ -39,4 +39,4 @@ export class UserComponent implements OnInit {
     //  userForm.reset();
     //  this.userService.selectUser = new User();
   //}
-}
+//}

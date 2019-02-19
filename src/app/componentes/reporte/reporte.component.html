@@ -1,10 +1,41 @@
-<div class="jumbotron mt3">
+<div class="container">
+    <div class="row">
+        <div class="card mt-5">
+            <div class="card-body">
 
-    <h1 class="display-8"><b>REPORTES DE INGRESO</b></h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+                <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+                    <!-- TO UPDATE -->
+                    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="userService.selectUser.$key">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="userService.selectUser.name" placeholder="Agregar un Usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="userService.selectUser.apellido" placeholder="Agregar Apellido">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="locacion" #locacion="ngModel" [(ngModel)]="userService.selectUser.locacion" placeholder="Agregar una Locacion">
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"></span>
+                            </div>
+                            <input type="number" class="form-control" name="edad" #edad="ngModel" [(ngModel)]="userService.selectUser.edad" placeholder="Agrega su Edad">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <img width="300" alt="Angular Logo" src="/assets/imgs/bck.png">;
+                        <button class="btn btn-primary" type="submit">
+                          <i class="fas fa-plus-circle"></i> Agregar Usuario
+                      </button>
+                        <button class="btn btn-secondary" type="reset" (click)="resetForm(userForm)">
+                          <i class="fas fa-sync-alt"></i> Restablecer
+                      </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
