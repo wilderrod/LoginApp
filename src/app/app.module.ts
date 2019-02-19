@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-
-
-import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module'; 
+//import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 //import { AngularFireModule } from '@angular/fire';
 import { AngularFireModule } from 'angularfire2';
@@ -28,6 +27,9 @@ import { UserListComponent } from './componentes/principal/user-list/user-list.c
 import { UserComponent } from './componentes/principal/user/user.component';
 import { UserService } from './servicios/user.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import * as firebase from 'firebase/app';
 
 @NgModule({
   declarations: [
@@ -43,18 +45,27 @@ import { UserService } from './servicios/user.service';
     ReporteComponent,
     UserListComponent,
     UserComponent,
+    //HttpClient,
+    //HttpClientModule,
   
   ],
   imports: [
+    //HttpClient,
+    //HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [UserService,AuthService,AuthGuard,FlashMessagesService],
+  providers: [UserService,
+    HttpClient,
+    HttpClientModule,AuthService,AuthGuard,FlashMessagesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

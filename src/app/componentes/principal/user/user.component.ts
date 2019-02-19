@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../../../servicios/user.service';
-import { User} from '../../../models/user';
-//import { ToastrService } from 'ngx-toastr';
+//import { User} from '../../../models/user';
+import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/http';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,7 +13,7 @@ import { User} from '../../../models/user';
 export class UserComponent implements OnInit {
 
   constructor(
-    private userService: UserService, 
+    private userService: UserService, private httpClient: HttpClient
     //private toastr: ToastrService
     )
    { }
@@ -27,14 +29,14 @@ export class UserComponent implements OnInit {
     else
     this.userService.updateUser(userForm.value);
     
-    this.resetForm(userForm);
+   // this.resetForm(userForm);
     //this.toastr.success('Sucessful Operation', 'Product Registered');
   }
 
-  resetForm(userForm?: NgForm)
-  {
-    if(userForm != null)
-      userForm.reset();
-      this.userService.selectUser = new User();
-  }
+  //resetForm(userForm?: NgForm)
+  //{
+    //if(userForm != null)
+    //  userForm.reset();
+    //  this.userService.selectUser = new User();
+  //}
 }
