@@ -21,6 +21,9 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';//
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
+import { ReporteComponent } from './componentes/reporte/reporte.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import {AuthGuard} from './guards/auth.guard';
     RegisterComponent,
     NotfoundpageComponent,
     UsuarioComponent,
+    PrincipalComponent,
+    ContactoComponent,
+    ReporteComponent,
   
   ],
   imports: [

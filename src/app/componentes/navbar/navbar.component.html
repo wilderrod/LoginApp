@@ -3,14 +3,27 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+    <!-- Example split danger button -->
+    <div class="btn-group" *ngIf="isLogin">
+        <button type="button" class="btn btn-danger" routerLink='/'><b>Inicio</b></button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only"*ngIf="!isLogin">T</span>
+    </button>
+        <div class="dropdown-menu" *ngIf="isLogin">
+            <a class="dropdown-item" routerLink='/principal'><b>Principal</b></a>
+            <a class="dropdown-item" routerLink='/contacto'><b>Contacto</b></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink='/reporte'><b>Reportes</b></a>
+        </div>
+    </div>
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#" routerLink='/'><b>Inicio</b> <span class="sr-only"></span></a>
+                <!--a class="nav-link" href="#"><b>Inicio</b> <span class="sr-only"></span></a-->
             </li>
 
         </ul>
+
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item " *ngIf="!isLogin">

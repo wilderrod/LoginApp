@@ -8,6 +8,9 @@ import {LoginComponent} from './componentes/login/login.component';
 import {RegisterComponent} from './componentes/register/register.component';
 import {UsuarioComponent} from './componentes/usuario/usuario.component';
 import {NotfoundpageComponent} from './componentes/notfoundpage/notfoundpage.component';
+import {PrincipalComponent} from './componentes/principal/principal.component';
+import {ContactoComponent} from './componentes/contacto/contacto.component';
+import {ReporteComponent} from './componentes/reporte/reporte.component';
 import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
@@ -16,6 +19,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'usuario', component: UsuarioComponent, canActivate: [AuthGuard]},
+  {path: 'principal', component: PrincipalComponent},
+  {path: 'contacto', component: ContactoComponent},
+  {path: 'reporte', component: ReporteComponent},
   {path: '**', component: NotfoundpageComponent}
 ];
 

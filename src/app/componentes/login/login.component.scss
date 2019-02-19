@@ -2,7 +2,13 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: top center;
-    background: url('/src/assets/imgs/background.jpg');
+}
+
+.body {
+    background-image: url('/assets/imgs/bck.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin: 10px 0px 0px 0px;
 }
 
 .btn-facebook,

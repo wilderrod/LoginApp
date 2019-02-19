@@ -5,11 +5,10 @@
     background-color: burlywood;
 }
 
-body {
-    background-color: transparent;
-    //background-image: url('/src/assets/imgs/background.jpg');
-}
-
+//body {
+//background-color: transparent;
+//background-image: url('/assets/imgs/logo.png');
+//}
 .badge {
     display: inline-block;
     padding: 0.25em 0.3em;
@@ -21,4 +20,10 @@ body {
     vertical-align: baseline;
     border-radius: 0.25rem;
     margin: 10px 15px 0px 0px;
+}
+
+.ae-container-fluid {
+    padding: 0.25em 0.3em;
+    text-align: center;
+    margin: 40px 15px 0px 0px;
 }
