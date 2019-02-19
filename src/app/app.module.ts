@@ -24,6 +24,9 @@ import {AuthGuard} from './guards/auth.guard';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { ReporteComponent } from './componentes/reporte/reporte.component';
+import { UserListComponent } from './componentes/principal/user-list/user-list.component';
+import { UserComponent } from './componentes/principal/user/user.component';
+import { UserService } from './servicios/user.service';
 
 
 @NgModule({
@@ -38,6 +41,8 @@ import { ReporteComponent } from './componentes/reporte/reporte.component';
     PrincipalComponent,
     ContactoComponent,
     ReporteComponent,
+    UserListComponent,
+    UserComponent,
   
   ],
   imports: [
@@ -46,9 +51,10 @@ import { ReporteComponent } from './componentes/reporte/reporte.component';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     FlashMessagesModule
   ],
-  providers: [AuthService,AuthGuard,FlashMessagesService],
+  providers: [UserService,AuthService,AuthGuard,FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
