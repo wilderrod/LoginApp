@@ -2,4 +2,23 @@
 
 .alert.flash-message {
     margin-top: 12px;
+    background-color: burlywood;
+}
+
+body {
+    background-color: transparent;
+    //background-image: url('/src/assets/imgs/background.jpg');
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.3em;
+    font-size: 90%;
+    font-weight: 700;
+    line-height: 2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    margin: 10px 15px 0px 0px;
 }

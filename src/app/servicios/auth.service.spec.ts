@@ -7,9 +7,11 @@ describe('AuthService', () => {
     providers: [AuthService]
   }));
 
-  it('should be created', inject([AuthService], (service: AuthService) => {
+  it('should be created', ()=> {
+    //inject([AuthService], (service: AuthService) => {
+      const service: AuthService = TestBed.get(AuthService);
     expect(service).toBeTruthy();
-  }));
+  });
 });
 //it('should be created', () => {
  // const service: AuthService = TestBed.get(AuthService);

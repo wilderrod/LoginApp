@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import 'rxjs/add/operator/map';
 
-@Injectable()
+
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
   private currentUser: firebase.User = null;
   
   constructor(
-    public afAuth: AngularFireAuth
-  ) { }
+    public afAuth: AngularFireAuth) { }
 
   loginTwitter () {
     return this.afAuth.auth.signInWithPopup( new firebase.auth.TwitterAuthProvider());
@@ -26,8 +30,9 @@ export class AuthService {
   registerUser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.createUserWithEmailAndPassword(email, pass)
-      .then( userData =>  resolve(userData),
-      err => reject (err));
+      .then(userData =>  resolve(userData),
+      
+      ).catch(err => console.log(reject(err)))
     });
   }
 

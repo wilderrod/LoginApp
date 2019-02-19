@@ -14,20 +14,20 @@
         <form class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item " *ngIf="!isLogin">
-                    <a class="nav-link" href="#" routerLink='/login'><b>Inicio de Sesión</b></a>
+                    <a class="nav-link" routerLink='/login'><b>Inicio de Sesión</b></a>
                 </li>
                 <li class="nav-item" *ngIf="!isLogin">
-                    <a class="nav-link" href="#" routerLink='/register'><b>Registrarse</b></a>
+                    <a class="nav-link" routerLink='/register'><b>Registrarse</b></a>
                 </li>
-                <li class="nav-item" *ngIf="!isLogin">
+                <li class="nav-item" *ngIf="isLogin">
                     <a class="nav-link" href="#" (click)="onClickLogout()">Salir</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">{{nombreUsuario}}</a>
+                    <a href="#" class="badge badge-secondary"> {{nombreUsuario}}</a>
                 </li>
                 <li class="nav-item" *ngIf="isLogin">
-                    <img src="{{fotoUsuario}}" class="rounded-circle">
-                    <span class="badge pill badge-secondary">{{emailUsuario}}</span>
+
+                    <a href="#" class="badge badge-primary">{{emailUsuario}}</a>
                 </li>
 
             </ul>
@@ -35,4 +35,5 @@
             <button class="btn btn-secondary my-2 my-sm-0" type="submit"><b>Buscar</b></button>
         </form>
     </div>
+
 </nav>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 //import { AngularFireModule } from '@angular/fire';
@@ -16,11 +17,11 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegisterComponent } from './componentes/register/register.component';
 import { NotfoundpageComponent } from './componentes/notfoundpage/notfoundpage.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
-
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';//
 import {AuthService} from './servicios/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+
 
 @NgModule({
   declarations: [

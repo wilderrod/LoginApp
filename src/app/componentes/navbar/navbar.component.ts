@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 import{ AuthService} from '../../servicios/auth.service'; 
 @Component({
   selector: 'app-navbar',
@@ -6,13 +7,14 @@ import{ AuthService} from '../../servicios/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-public isLogin: boolean;
-public nombreUsuario: string;
-public emailUsuario: string;
-public fotoUsuario: string;
 
-  constructor() { }
-    public authService: AuthService
+
+  constructor(public authService: AuthService, private afAuth: AngularFireAuth) { }
+  public isLogin: boolean = false;
+  public nombreUsuario: string;
+  public emailUsuario: string;
+  public fotoUsuario: string;
+
   ngOnInit() {
     this.authService.getAuth().subscribe( auth => {
       if (auth) {
@@ -27,6 +29,7 @@ public fotoUsuario: string;
   }
 
 onClickLogout() {
-  this.authService.logout();
+  //this.authService.logout();
+  this.afAuth.auth.signOut();
 }
 }
