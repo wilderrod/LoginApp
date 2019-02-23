@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
     this.userService.updateUser(userForm.value);
     
     this.resetForm(userForm);
-    this.toastr.success('Sucessful Operation', 'Product Registered');
+    this.toastr.success('Operación Exitosa', 'Usuario Registrado');
   }
 
   resetForm(userForm?: NgForm)
