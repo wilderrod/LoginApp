@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 //import { AngularFireModule } from '@angular/fire';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+//import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase} from 'angularfire2/database';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './componentes/home/home.component';
@@ -62,7 +64,7 @@ import * as firebase from 'firebase/app';
     ToastrModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [UserService,AuthService,AuthGuard,FlashMessagesService
+  providers: [AngularFireDatabase,UserService,AuthService,AuthGuard,FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })
